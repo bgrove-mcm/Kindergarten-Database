@@ -1,0 +1,180 @@
+USE Kindergarten;
+
+-- 
+-- TEACHER DATA
+-- 
+
+INSERT INTO Teacher
+(TeacherID, TeacherFName, TeacherLName, TeacherEmail)
+VALUES
+('T0000001', 'Emily', 'Johnson', 'ejohnson@kindergarten.com'),
+('T0000002', 'Michael', 'Smith', 'msmith@kindergarten.com'),
+('T0000003', 'Sarah', 'Williams', 'swilliams@kindergarten.com'),
+('T0000004', 'Daniel', 'Brown', 'dbrown@kindergarten.com'),
+('T0000005', 'Jessica', 'Davis', 'jdavis@kindergarten.com'),
+('T0000006', 'Matthew', 'Miller', 'mmiller@kindergarten.com'),
+('T0000007', 'Ashley', 'Wilson', 'awilson@kindergarten.com'),
+('T0000008', 'Christopher', 'Moore', 'cmoore@kindergarten.com'),
+('T0000009', 'Amanda', 'Taylor', 'ataylor@kindergarten.com'),
+('T0000010', 'Joshua', 'Anderson', 'janderson@kindergarten.com'),
+('T0000011', 'Lauren', 'Thomas', 'lthomas@kindergarten.com'),
+('T0000012', 'Andrew', 'Jackson', 'ajackson@kindergarten.com'),
+('T0000013', 'Megan', 'White', 'mwhite@kindergarten.com'),
+('T0000014', 'Ryan', 'Harris', 'rharris@kindergarten.com'),
+('T0000015', 'Rachel', 'Martin', 'rmartin@kindergarten.com'),
+('T0000016', 'Brandon', 'Thompson', 'bthompson@kindergarten.com'),
+('T0000017', 'Kayla', 'Garcia', 'kgarcia@kindergarten.com'),
+('T0000018', 'Tyler', 'Martinez', 'tmartinez@kindergarten.com'),
+('T0000019', 'Samantha', 'Robinson', 'srobinson@kindergarten.com'),
+('T0000020', 'Jacob', 'Clark', 'jclark@kindergarten.com');
+
+
+-- 
+-- CLASSROOM DATA
+-- Each teacher has one classroom
+-- 
+
+INSERT INTO Classroom
+(ClassroomNumber, ClassroomName, TeacherID)
+VALUES
+('101', 'Red Room', 'T0000001'),
+('102', 'Blue Room', 'T0000002'),
+('103', 'Green Room', 'T0000003'),
+('104', 'Yellow Room', 'T0000004'),
+('105', 'Orange Room', 'T0000005'),
+('106', 'Purple Room', 'T0000006'),
+('107', 'Pink Room', 'T0000007'),
+('108', 'Gold Room', 'T0000008'),
+('109', 'Silver Room', 'T0000009'),
+('110', 'Rainbow Room', 'T0000010'),
+('111', 'Star Room', 'T0000011'),
+('112', 'Sun Room', 'T0000012'),
+('113', 'Moon Room', 'T0000013'),
+('114', 'Cloud Room', 'T0000014'),
+('115', 'Apple Room', 'T0000015'),
+('116', 'Tiger Room', 'T0000016'),
+('117', 'Lion Room', 'T0000017'),
+('118', 'Bear Room', 'T0000018'),
+('119', 'Eagle Room', 'T0000019'),
+('120', 'Dolphin Room', 'T0000020');
+
+
+-- 
+-- STUDENT DATA
+-- 
+
+INSERT INTO Student
+(StudentID, StudentFName, StudentLName, StudentEmail, TeacherID)
+VALUES
+('S0000001', 'Emma', 'Anderson', 'eanderson@student.com', 'T0000001'),
+('S0000002', 'Liam', 'Baker', 'lbaker@student.com', 'T0000002'),
+('S0000003', 'Olivia', 'Carter', 'ocarter@student.com', 'T0000003'),
+('S0000004', 'Noah', 'Davis', 'ndavis@student.com', 'T0000004'),
+('S0000005', 'Ava', 'Evans', 'aevans@student.com', 'T0000005'),
+('S0000006', 'Ethan', 'Foster', 'efoster@student.com', 'T0000006'),
+('S0000007', 'Sophia', 'Garcia', 'sgarcia@student.com', 'T0000007'),
+('S0000008', 'Mason', 'Harris', 'mharris@student.com', 'T0000008'),
+('S0000009', 'Isabella', 'Jackson', 'ijackson@student.com', 'T0000009'),
+('S0000010', 'Lucas', 'King', 'lking@student.com', 'T0000010'),
+('S0000011', 'Mia', 'Lewis', 'mlewis@student.com', 'T0000011'),
+('S0000012', 'James', 'Martin', 'jmartin@student.com', 'T0000012'),
+('S0000013', 'Charlotte', 'Nelson', 'cnelson@student.com', 'T0000013'),
+('S0000014', 'Benjamin', 'Parker', 'bparker@student.com', 'T0000014'),
+('S0000015', 'Amelia', 'Roberts', 'aroberts@student.com', 'T0000015'),
+('S0000016', 'Henry', 'Scott', 'hscott@student.com', 'T0000016'),
+('S0000017', 'Harper', 'Turner', 'hturner@student.com', 'T0000017'),
+('S0000018', 'Alexander', 'Walker', 'awalker@student.com', 'T0000018'),
+('S0000019', 'Evelyn', 'Young', 'eyoung@student.com', 'T0000019'),
+('S0000020', 'Daniel', 'Adams', 'dadams@student.com', 'T0000020');
+
+
+-- 
+-- NURSE DATA
+-- Each student has one nurse record
+-- 
+
+INSERT INTO Nurse
+(StudentID, Allergies, Medication, Vaccination, EmergencyContact)
+VALUES
+('S0000001', 'None', 'None', TRUE, 'Jessica Anderson'),
+('S0000002', 'Peanuts', 'None', TRUE, 'David Baker'),
+('S0000003', 'None', 'None', TRUE, 'Maria Carter'),
+('S0000004', 'Eggs', 'None', TRUE, 'Robert Davis'),
+('S0000005', 'None', 'None', TRUE, 'Jennifer Evans'),
+('S0000006', 'Milk', 'None', TRUE, 'Thomas Foster'),
+('S0000007', 'Peanuts', 'Inhaler', TRUE, 'Lisa Garcia'),
+('S0000008', 'None', 'None', TRUE, 'Mark Harris'),
+('S0000009', 'Eggs', 'None', TRUE, 'Laura Jackson'),
+('S0000010', 'None', 'None', TRUE, 'Kevin King'),
+('S0000011', 'Peanuts and Eggs', 'None', TRUE, 'Amanda Lewis'),
+('S0000012', 'None', 'None', TRUE, 'Brian Martin'),
+('S0000013', 'Milk', 'None', TRUE, 'Sarah Nelson'),
+('S0000014', 'None', 'EpiPen', TRUE, 'James Parker'),
+('S0000015', 'Peanuts', 'None', TRUE, 'Michelle Roberts'),
+('S0000016', 'None', 'None', TRUE, 'Daniel Scott'),
+('S0000017', 'Eggs', 'None', TRUE, 'Ashley Turner'),
+('S0000018', 'None', 'None', TRUE, 'Christopher Walker'),
+('S0000019', 'Peanuts and Eggs', 'Inhaler', TRUE, 'Nicole Young'),
+('S0000020', 'None', 'None', TRUE, 'Steven Adams');
+
+
+-- 
+-- LUNCH BALANCE DATA
+-- Mix of high, low, and very low balances
+-- to demonstrate the stored function
+-- 
+
+INSERT INTO LunchBalance
+(StudentID, Balance, ReducedLunch)
+VALUES
+('S0000001', 25, FALSE),
+('S0000002', 18, TRUE),
+('S0000003', 12, FALSE),
+('S0000004', 6, TRUE),
+('S0000005', 30, FALSE),
+('S0000006', 14, TRUE),
+('S0000007', 22, FALSE),
+('S0000008', 4, TRUE),
+('S0000009', 17, FALSE),
+('S0000010', 9, TRUE),
+('S0000011', 35, FALSE),
+('S0000012', 13, TRUE),
+('S0000013', 20, FALSE),
+('S0000014', 5, TRUE),
+('S0000015', 16, FALSE),
+('S0000016', 27, FALSE),
+('S0000017', 10, TRUE),
+('S0000018', 19, FALSE),
+('S0000019', 7, TRUE),
+('S0000020', 32, FALSE);
+
+
+-- 
+-- TRANSPORTATION DATA
+-- Includes bus riders, car riders, and walkers
+-- for the UNION query
+-- 
+
+INSERT INTO Transportation
+(StudentID, TransportType, BusNumber, CarInfo)
+VALUES
+('S0000001', 'Bus', 'Bus 1', 'N/A'),
+('S0000002', 'Car', 'N/A', 'ABC123'),
+('S0000003', 'Walker', 'N/A', 'N/A'),
+('S0000004', 'Bus', 'Bus 2', 'N/A'),
+('S0000005', 'Car', 'N/A', 'XYZ456'),
+('S0000006', 'Bus', 'Bus 1', 'N/A'),
+('S0000007', 'Walker', 'N/A', 'N/A'),
+('S0000008', 'Bus', 'Bus 2', 'N/A'),
+('S0000009', 'Car', 'N/A', 'DEF789'),
+('S0000010', 'Bus', 'Bus 3', 'N/A'),
+('S0000011', 'Walker', 'N/A', 'N/A'),
+('S0000012', 'Car', 'N/A', 'GHI321'),
+('S0000013', 'Bus', 'Bus 3', 'N/A'),
+('S0000014', 'Bus', 'Bus 2', 'N/A'),
+('S0000015', 'Car', 'N/A', 'JKL654'),
+('S0000016', 'Walker', 'N/A', 'N/A'),
+('S0000017', 'Bus', 'Bus 1', 'N/A'),
+('S0000018', 'Car', 'N/A', 'MNO987'),
+('S0000019', 'Bus', 'Bus 3', 'N/A'),
+('S0000020', 'Walker', 'N/A', 'N/A');
