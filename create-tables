@@ -1,0 +1,51 @@
+
+CREATE DATABASE Kindergarten;
+
+USE Kindergarten;
+CREATE table Teacher(
+teacherid CHAR(8) not null,
+teacherfname VARCHAR(15) not null,
+teacherlname VARCHAR(15) not null,
+teacheremail VARCHAR(25) not null,
+Primary key (teacherid));
+
+CREATE TABLE Student(
+studentid CHAR(9) not null,
+studentfname VARCHAR(15) not null,
+studentlname VARCHAR(15) not null,
+studentemail VARCHAR(25) not null,
+teacherid CHAR(8) not null,
+Primary key (studentid),
+foreign key (teacherid) references teacher(teacherid) );
+
+CREATE TABLE Classroom(
+classroomnumber CHAR(3) not null,
+classroomname VARCHAR(15) not null,
+teacherid CHAR(8) not null,
+Primary key (classroomnumber),
+foreign key (teacherid) references teacher(teacherid) );
+
+CREATE TABLE Nurse(
+studentid CHAR(9) not null,
+allergies VARCHAR(50),
+medication VARCHAR(50) ,
+vaccination BOOLEAN not null,
+EmergencyContact VARCHAR(35) not null,
+Primary key (studentid),
+foreign key (studentid) references student(studentid) );
+
+CREATE TABLE LunchBalance(
+studentid CHAR(9) not null,
+Balance INT not null,
+Reducedlunch boolean not null,
+Primary key (studentid),
+foreign key (studentid) references student(studentid) );
+
+CREATE TABLE transportation(
+studentid CHAR(9) not null,
+transporttype VARCHAR(8) not null,
+BusNumber VARCHAR(8) ,
+carinfo VARCHAR(9),
+Primary key (studentid),
+foreign key (studentid) references student(studentid) );
+
