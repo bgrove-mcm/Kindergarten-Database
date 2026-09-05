@@ -1,0 +1,24 @@
+-- What classroom is assigned to each teacher--
+SELECT t.teacherfname, t.teacherlname, c.classroomname
+FROM Teacher t
+LEFT OUTER JOIN Classroom c
+ON t.teacherid = c.teacherid;
+
+--Union created to view students with allergies--
+CREATE VIEW AllergyView AS
+SELECT s.studentfname, s.studentlname, n.allergies
+FROM Student s
+INNER JOIN Nurse n
+ON s.studentid = n.studentid
+WHERE s.studentid IN
+  (SELECT studentid
+    FROM Nurse
+    WHERE allergies = 'Peanuts'
+    OR allergies = 'Eggs');
+
+--How many students are assigned to each teacher?--
+SELECT t.teacherid, t.teacherlname, COUNT(studentid) AS NumberOfStudents
+FROM student s, teacher t
+WHERE s.teacherid = t.teacherid
+GROUP BY t.teacherid, t.teacherlname
+HAVING COUNT(studentid) >= 1;
